@@ -2,14 +2,6 @@ group 'com.byneapp.flutter_config'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    if (project.android.hasProperty("namespace")) {
-        namespace 'com.byneapp.flutter_config'
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-
     ext.kotlin_version = '1.7.20'
     repositories {
         google()
@@ -33,6 +25,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.byneapp.flutter_config'
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    
     compileSdkVersion 29
 
     sourceSets {
